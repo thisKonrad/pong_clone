@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pong</title>
+
+<link rel="stylesheet"  href="style.css">
+
+</head>
+
+<body>
+    <main>
+
+        <h1>pong clone</h1>
+
+        <header class="display">
+          
+            <div class="score">
+                <span id="playerOne">0</span>
+                <span id="score_mid"> : </span>
+                <span id="playerTwo">0</span>
+            </div>
+
+        </header>
+        
+        <div class="canvas_wrap">
+
+            <canvas id="canvas_pong"></canvas>
+
+        </div>
+
+        <div class="control_wrap">
+
+            <p class="key">A</p>
+            <button id="leftUp" class="control" >▲</button>
+            <p class="key">Y</p>
+            <button id="leftDown" class="control" >▼</button>
+            <div id="space"></div>
+            
+            <button id="rightUp" class="control" >▲</button>
+            <p class="key">K</p>
+            <button id="rightDown" class="control" >▼</button>
+            <p class="key">M</p>
+
+         
+
+        </div>
+
+        <div class="start_reset">
+
+            <button id="start" class="button">start</button>
+            <button id="reset" class="button">res</button>
+
+        </div>
+    
+
+    </main>
+   
+
+<script src="main.js"></script>
+
+</body>
+</html>
