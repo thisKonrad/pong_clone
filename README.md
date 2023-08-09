@@ -11,7 +11,7 @@ move the paddels left with A and Y key.
 move the paddels right with A and Y key.
 
 
-
+watch on codepen: https://codepen.io/Konrad-Wittich/pen/YzRMzrq
 
 how it works in js:
 
