@@ -1,4 +1,4 @@
-/* :: pong style :: */
+/* :: pong_stylesheet :: */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
 
@@ -15,6 +15,7 @@ body{
     margin: 1em auto;
     background-color: black;
 }
+
 
 h1{
     color: white;
@@ -57,8 +58,8 @@ h1{
     background-color: black;}
 
 .score{
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: 2.4rem;
+    font-weight: 400;
     margin: 1rem;
 }
 #score_mid{
@@ -74,14 +75,12 @@ h1{
 .key{
     color: white;
     font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
 }
 
 .button{ 
     width: 8rem;
-    font-size: 1.6rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
     color: white;
     cursor: pointer;
     padding: 0.8rem;
