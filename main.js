@@ -1,4 +1,4 @@
-/* :: pong clone main.JS :: */
+/* :: pong clone main js :: */
 
 (function(){
 
@@ -13,7 +13,6 @@ canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 
 let canvasBackground = 'black';
-
 
 let intervalID;
 
@@ -46,7 +45,7 @@ let paddleTwo = {
     y: canvasHeight -150
 };
 
-/* :: the ball values :: */
+/* :: ↓ the ball values: */
 let ballSpeed = 1;
 const ballRadius = 14.5;
 let ballColor = 'white';
@@ -58,11 +57,14 @@ let ballDirectionY = 0;
 
 /* :: clear canvas after every animation frame :: */
 function clearBoard(){
+
     ctx.fillStyle = canvasBackground;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
 };
 
 
+/* :: ↓ >> the paddles << ↓ :: */
 function drawPaddles(){
 
     ctx.strokeStyle = paddleOneColor;
@@ -79,6 +81,7 @@ function drawPaddles(){
 drawPaddles();
 
 
+/* :: ↓ >> the ball << ↓ :: */
 function drawCenterLine(){
 
     ctx.beginPath();
@@ -91,6 +94,18 @@ function drawCenterLine(){
 }
 drawCenterLine();
 
+function drawBall(ballX, ballY){
+
+    ctx.fillStyle = ballColor;
+    ctx.strokeStyle = ballColor;
+    ctx.lineWidth = 2;
+
+    ctx.beginPath()
+    ctx.arc(ballX, ballY, ballRadius, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
+
+};
 
 function createBall(){
 
@@ -125,20 +140,7 @@ function moveBall(){
 };
 
 
-function drawBall(ballX, ballY){
-
-    ctx.fillStyle = ballColor;
-    ctx.strokeStyle = ballColor;
-    ctx.lineWidth = 2;
-
-    ctx.beginPath()
-    ctx.arc(ballX, ballY, ballRadius, 0, 2 * Math.PI);
-    ctx.stroke();
-    ctx.fill();
-
-};
-
-
+/* :: ↓ >> the collisons << ↓ :: */
 function checkCollison(){
 
     /* :: change direction on canvas collision :: */
@@ -167,7 +169,7 @@ function checkCollison(){
     /* :: ↓ collision to the paddles ↓ :: */
      
     /** middle of paddle X against ballX position in
-    /* the cordinate system of the canvas 
+    /* the coordinate system of the canvas 
     /* same for the Y coordinates here in one nested if statement: */
 
     if( ballX <=(paddleOne.x + paddleOne.width + ballRadius)){
@@ -175,7 +177,7 @@ function checkCollison(){
         if( ballY > paddleOne.y && ballY < paddleOne.y 
             + paddleOne.height) 
         
-        /* the x,y coordinates match >> then the ball changes his
+        /* the x,y coordinates match >> then the ball changes 
         /* direction and the speed increases by one. */
 
         ballDirectionX *= -1;
@@ -192,7 +194,7 @@ function checkCollison(){
         + paddleTwo.height)
 
         ballDirectionX  *= -1;
-        ballSpeed +=1;
+        ballSpeed += 1;
 
         paddleTwoColor = 'aqua';
         setTimeout( () => { paddleTwoColor = 'white'; }, 300);
@@ -210,7 +212,7 @@ function updateScore(){
 
         playerOneDisplay.style.color ='yellow';
 
-    }else{
+    } else{
 
         playerOneDisplay.style.color ='white';
     }
@@ -228,7 +230,7 @@ function updateScore(){
 };
 
 
-/* basic animation function */
+/* :: basic animation function :: */
 function update(){
 
     intervalID = setInterval(()=>{ 
@@ -245,14 +247,13 @@ function update(){
 };
 
 
-
 function gameStart(){
 
     createBall();
     update();
     
-
 };
+
 
 function resetGame(){
 
@@ -288,21 +289,21 @@ function resetGame(){
 
 
 const reset = document.querySelector('#reset');
-reset.addEventListener('click', resetGame);
+    reset.addEventListener('click', resetGame);
 
 const start = document.querySelector('#start');
-start.addEventListener('click', gameStart);
+    start.addEventListener('click', gameStart);
 
 
-/* :::: ↓ button controls for touch device ↓ :::: */
-window.addEventListener('pointerdown', changeDirectionTouch);
-
+/* :: >> ↓ button controls for touch device ↓ << :: */
 const leftUpBtn = document.querySelector('#leftUp');
 const leftDownBtn = document.querySelector('#leftDown');
 const rightUpBtn = document.querySelector('#rightUp');
 const rightDownBtn = document.querySelector('#rightDown');
 
-function changeDirectionTouch(e){
+window.addEventListener('pointerdown', changeDirectionPointerDown);
+
+function changeDirectionPointerDown(e){
 
     const pointerDown = e.target;
 
@@ -340,8 +341,7 @@ function changeDirectionTouch(e){
 
 };
 
-
-/* :::: ↓ keyboard controls ↓ :::: */
+/* :: >> ↓ keyboard controls ↓ << :: */
 window.addEventListener('keydown', changeDirection);
 
 function changeDirection(e){
@@ -359,26 +359,33 @@ function changeDirection(e){
     switch(keyPressed){
 
         case (paddleOneUp):
+
             if(paddleOne.y > 0){
             paddleOne.y -= paddleSpeed;}
 
             leftUpBtn.style.color = 'yellow';
+
             setTimeout( () => { 
-            leftUpBtn.style.color = 'white'; }, 300);
+            leftUpBtn.style.color = 'white'; 
+            }, 300);
 
             break;
 
         case (paddleOneDown):
+
             if(paddleOne.y < canvasHeight - paddleOne.height){
             paddleOne.y += paddleSpeed;}
 
             leftDownBtn.style.color = 'yellow';
+
             setTimeout( () => { 
-            leftDownBtn.style.color = 'white'; }, 300);
+            leftDownBtn.style.color = 'white'; 
+            }, 300);
 
             break;
 
         case(paddleTwoUp):
+
             if(paddleTwo.y > 0){
             paddleTwo.y -= paddleSpeed;}
 
@@ -389,12 +396,15 @@ function changeDirection(e){
             break;
 
         case(paddleTwoDown):
+
             if(paddleTwo.y < canvasHeight - paddleTwo.height){
             paddleTwo.y += paddleSpeed;}
 
             rightDownBtn.style.color = 'aqua';
+
             setTimeout( () => { 
-            rightDownBtn.style.color = 'white'; }, 300);
+            rightDownBtn.style.color = 'white'; 
+            }, 300);
 
             break;
     }
