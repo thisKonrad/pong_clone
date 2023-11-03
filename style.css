@@ -80,7 +80,7 @@ h1{
 
 .button{ 
     width: 8rem;
-    font-size: 2rem;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
     padding: 0.8rem;
@@ -155,4 +155,7 @@ h1{
         height: 50%;
     }
 }
+
+@media only screen and (max-width: 424px) {}
+
 
