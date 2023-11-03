@@ -123,23 +123,33 @@ h1{
     max-width: 100%;
 }
 
-.left_control{
-    grid-area: 1/ 2/ 2/ 3;
+.right_control_up{
+    grid-area: 1/ 3/ 1/ 4;
+}
+.right_control_down{
+    grid-area: 2/ 3/ 2/ 4;
 }
 
-.right_control{
-    grid-area: 1/ 3/ 2/ 4;
+.left_control_up{
+    grid-area: 1/ 2/ 1/ 3;
+}
+.left_control_down{
+    grid-area: 2/ 2/ 2/ 3;
 }
 
 #space{
     width: 2rem;
 }
 
-.start_reset{
-    grid-area: 1/ 4/ 4/ 5;
-    margin-top: 1rem;
+.start_wrap {
+    grid-area: 3/ 2/ 4/ 3;
+}
+.reset_wrap {
+    grid-area: 3/ 3/ 3/ 4;
+}
+
+.start_wrap, .reset_wrap{
     display: flex;
-    max-width: 100%;
     flex-direction: row;
     flex-basis: auto;
     justify-content:center;
@@ -147,17 +157,22 @@ h1{
     flex-wrap: wrap;
     flex-grow: inherit;
     flex-shrink: inherit;
+    margin: 0.5rem;
+    max-width: 100%;
     gap: 4rem;
 }
 #reset:active{ color: red; border: 0.025rem solid red;}
 #start:active{ color: rgb(83, 255, 83); border: 0.025rem solid rgb(83, 255, 83);}
 
-@media only screen and (max-width: 620px) {
+
+
+/* :::: MEDIA QUERIES :::: */
+@media only screen and (max-width: 750px) {
 
     #canvas_pong{ 
         margin: 1em;
         width: 90%;
-        height: 50%;
+        height: 60%;
     }
 }
 
