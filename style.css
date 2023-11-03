@@ -39,7 +39,7 @@ h1{
 
 .canvas_wrap{ 
     display: flex;
-    max-width: 100%;
+    max-width: 140%;
     flex-direction: row;
     flex-basis: auto;
     justify-content:space-evenly;
@@ -52,8 +52,8 @@ h1{
 
 #canvas_pong{ 
     margin: 1em;
-    width: 32%;
-    height: 32%;
+    width: 58%;
+    height: 24%;
     border: 0.15rem solid white;
     background-color: black;}
 
@@ -119,6 +119,8 @@ h1{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
     gap: 0.6rem;
     max-width: 100%;
 }
@@ -137,9 +139,6 @@ h1{
     grid-area: 2/ 2/ 2/ 3;
 }
 
-#space{
-    width: 2rem;
-}
 
 .start_wrap {
     grid-area: 3/ 2/ 4/ 3;
@@ -178,7 +177,21 @@ h1{
 
 @media only screen and (max-width: 424px) {
 
+    h1{
+        color: white;
+        font-size: 2rem;
+    }
+    
+    .score{
+        font-size: 1rem;
+    }
 
+    .key{
+        font-size: 1rem;
+    }
+    
+    .button{ 
+        font-size: 0.6rem;
+    }
 }
-
 
