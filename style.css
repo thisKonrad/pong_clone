@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
 
-*{ margin:0; padding:0; box-sizing: border-box;}
+*{ margin:0; padding:0; box-sizing: border-box; }
 
 :root{
     font-family: 'Press Start 2P', monospace;
@@ -84,6 +84,7 @@ h1{
     color: white;
     cursor: pointer;
     padding: 0.8rem;
+    font-family: 'Press Start 2P', monospace;
     border: 0.05rem solid white;
     background-color: transparent;
 }
