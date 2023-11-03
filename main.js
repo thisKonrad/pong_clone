@@ -1,4 +1,4 @@
-/* :: pong clone main js :: */
+/* :::: ---- pong clone main js ---- :::: */
 
 (function(){
 

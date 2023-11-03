@@ -164,7 +164,6 @@ h1{
 #start:active{ color: rgb(83, 255, 83); border: 0.025rem solid rgb(83, 255, 83);}
 
 
-
 /* :::: MEDIA QUERIES :::: */
 @media only screen and (max-width: 750px) {
 
@@ -192,6 +191,28 @@ h1{
     
     .button{ 
         font-size: 0.6rem;
+    }
+}
+
+
+@media only screen and (max-width: 311px) {
+
+    h1{
+        color: white;
+        font-size: 1.2rem;
+    }
+    
+    .score{
+        font-size: 0.6rem;
+    }
+
+    .key{
+        font-size: 0.6rem;
+    }
+    
+    .button{ 
+        font-size: 0.5rem;
+        width: 4rem;
     }
 }
 
