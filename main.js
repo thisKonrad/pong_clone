@@ -1,4 +1,4 @@
-/* :: pong clone main js :: */
+/* :::: ---- pong clone main js ---- :::: */
 
 (function(){
 
@@ -6,8 +6,8 @@
 const canvas = document.querySelector('#canvas_pong');
 const ctx = canvas.getContext('2d');
 
-let canvasWidth = 800;
-let canvasHeight = 600;
+let canvasWidth = 1200;
+let canvasHeight = 700;
 
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
