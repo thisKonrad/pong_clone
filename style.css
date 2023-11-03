@@ -116,23 +116,28 @@ h1{
 
 .control_wrap{ 
     margin-top: 2rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.6rem;
     max-width: 100%;
-    flex-direction: row;
-    flex-basis: auto;
-    justify-content:center;
-    align-items:center;
-    flex-wrap: wrap;
-    flex-grow: inherit;
-    flex-shrink: inherit;
-    gap: 1rem;
 }
+
+.left_control{
+    grid-area: 1/ 2/ 2/ 3;
+}
+
+.right_control{
+    grid-area: 1/ 3/ 2/ 4;
+}
+
 #space{
     width: 2rem;
 }
 
 .start_reset{
-    margin-top: 3rem;
+    grid-area: 1/ 4/ 4/ 5;
+    margin-top: 1rem;
     display: flex;
     max-width: 100%;
     flex-direction: row;
@@ -156,6 +161,9 @@ h1{
     }
 }
 
-@media only screen and (max-width: 424px) {}
+@media only screen and (max-width: 424px) {
+
+
+}
 
 
